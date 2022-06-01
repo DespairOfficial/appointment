@@ -25,5 +25,13 @@ class doctorsController {
             throw err
         }
     }
+    createSlot = async (req, res) => {
+        try {
+            const doctorId = req.body.doctorId
+            const newSlot = req.body.slot
+            const doctor = await Doctor.findById(doctorId)
+            console.log(doctor)
+        } catch {}
+    }
 }
 module.exports = new doctorsController()
