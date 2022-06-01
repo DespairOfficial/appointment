@@ -30,8 +30,15 @@ class doctorsController {
             const doctorId = req.body.doctorId
             const newSlot = req.body.slot
             const doctor = await Doctor.findById(doctorId)
-            console.log(doctor)
-        } catch {}
+            doctor.slots.push(newSlot)
+            doctor.save((err, doc) => {
+                if (err) throw err
+                res.send({ doctor: doc })
+            })
+        } catch (err) {
+            res.send(400)
+            console.log(err)
+        }
     }
 }
 module.exports = new doctorsController()
