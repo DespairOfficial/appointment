@@ -3,20 +3,20 @@
 docker-compose up --build
 База изначально заполнена
 
-###### Работа с API
+### Работа с API
 
-### Doctors
+###### Doctors
 
 GET: /doctors
 POST: {name, spec, slots} /doctors/create - создать доктора
 POST: {doctorId, slot} /doctors/slot/create - добавить слот доктору
 
-### Tickets
+###### Tickets
 
 GET: /tickets - все записи
 POST: {doctor, user, slot} /tickets/create - добавить запись
 
-### Users
+###### Users
 
 GET: /users - все пользователи
 POST: {name, phone} /users/create - создать пользователя
