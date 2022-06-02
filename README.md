@@ -21,3 +21,10 @@ POST: {doctor, user, slot} /tickets/create - добавить запись
 GET: /users - все пользователи
 POST: {name, phone} /users/create - создать пользователя
 GET: /users/:userId/wait - ждать напоминание для пользователя
+
+###### mongorestore.sh
+
+Перед каждым запуском контейнера бд обнуляется
+mongo hospital --eval "db.dropDatabase()"
+И потом заполняется из дампа
+mongorestore -d hospital ../hospitalDump
